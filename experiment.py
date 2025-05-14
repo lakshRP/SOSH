@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 # Test: Requires the algorithms to form a pentagon, and it utilizes monte carlo simulation to creat statistics.
 # Evaluates: W-MSR, Huber, SOSH (ours), and No Mitigation (control) on the test case
+
 # Parameters
 N = 5
 dt = 0.05
@@ -49,7 +50,7 @@ def get_disp(i, j):
     if (j, i) in d_map:   return -d_map[(j, i)]
     return np.zeros(2)
 
-# Simulation engine
+# Simulation engine for error curves
 def simulate_step(step_fn):
     V = np.zeros(horizon)
     for _ in range(trials):
@@ -95,11 +96,11 @@ def huber_step(x, y, prev, x_next):
         for j in neighbors[i]:
             err = x[i] - y[j] - get_disp(i,j)
             norm = np.linalg.norm(err)
-            w = 1 if norm<=c else c/norm
+            w = 1 if norm <= c else c/norm
             s += w*err
         x_next[i] = x[i] - dt * s
 
-# Run
+# Run error simulations
 V_attack = simulate_step(attack_step)
 V_sosh   = simulate_step(sosh_step)
 V_wmsr   = simulate_step(wmsr_step)
@@ -124,10 +125,39 @@ def metrics(V):
     V100 = V[100]
     V_inf = V[150:].mean()
     AUC = V[:101].sum() * dt
-    T1 = next((k for k in range(horizon) if V[k]<=0.01*V[0]), '—')
+    T1 = next((k for k in range(horizon) if V[k] <= 0.01 * V[0]), '—')
     return V100, V_inf, AUC, T1
 
 methods = ['No Mitigation','SOSH','W-MSR','Huber']
 rows = [metrics(V) for V in [V_attack, V_sosh, V_wmsr, V_huber]]
 df = pd.DataFrame(rows, index=methods, columns=['V100','V_inf','AUC0-100','T1%'])
 print(df)
+
+# --- New: Generate CSV of all positions for each method, trial, timestep, and agent ---
+positions = []
+for method_name, step_fn in zip(methods, [attack_step, sosh_step, wmsr_step, huber_step]):
+    for trial in range(trials):
+        x = np.random.uniform(-0.5, 1.5, (N, 2))
+        prev = x.copy()
+        for k in range(horizon):
+            # record each agent's position
+            for i in range(N):
+                positions.append({
+                    'Method': method_name,
+                    'Trial': trial,
+                    'TimeStep': k,
+                    'Agent': i,
+                    'X': x[i, 0],
+                    'Y': x[i, 1]
+                })
+            # step forward
+            y = x.copy()
+            x_next = x.copy()
+            step_fn(x, y, prev, x_next)
+            prev = x.copy()
+            x = x_next
+
+# create DataFrame and write to CSV
+positions_df = pd.DataFrame(positions)
+positions_df.to_csv('all_positions.csv', index=False)
+print("Saved all positions to all_positions.csv")
