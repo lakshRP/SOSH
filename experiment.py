@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+# Test: Requires the algorithms to form a pentagon, and it utilizes monte carlo simulation to creat statistics.
+# Evaluates: W-MSR, Huber, SOSH (ours), and No Mitigation (control) on the test case
 # Parameters
 N = 5
 dt = 0.05
