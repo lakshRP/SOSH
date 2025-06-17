@@ -17,7 +17,7 @@ Second Order State Hallucinations (SOSH) is a novel methodolgy for mitigating at
 ## Talks & Awards
 - **NCSSS 2025 Student Research Conference**  
   Awarded a fully funded trip to present SOSH at the National Consortium of Secondary STEM Schools.
-  - **24th Annual High School Research Symposium**  
+- **24th Annual High School Research Symposium**  
   Presented SOSH and received the People’s Choice Award.
 - **63rd Illinois Junior Science and Humanities Symposium**  
   Presented SOSH research.
