@@ -32,7 +32,7 @@ Second Order State Hallucinations (SOSH) is a novel methodolgy for mitigating at
 - **Python 3.8+**  
   ```bash
   pip install -r code/requirements.txt
-````
+
 
 * **MATLAB** (for running `analysis/analysis_extensive.m`)
 * **C++17** (with Eigen & matplotlib-cpp for compiling `analysis/analysis_full.cpp`)
