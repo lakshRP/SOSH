@@ -24,12 +24,6 @@ Second Order State Hallucinations (SOSH) is a novel methodolgy for mitigating at
 - **3rd International Mathematics and Statistics Student Research Symposium**  
   Invited to deliver a talk on SOSH methodology.
   
-````markdown
-# Second Order State Hallucinations (SOSH)
-
-**A robust formation‐control framework with adversarial‐attack mitigation via second‐order hallucinations.**
-
-![Simulation Example](figures/simulation_example.png)
 
 ## 🚀 Getting Started
 
