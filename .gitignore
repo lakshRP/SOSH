@@ -1,0 +1,19 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env/
+venv/
+.venv/
+
+# Data
+data/raw/
+data/processed/
+
+# Jupyter
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
