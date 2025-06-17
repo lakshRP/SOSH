@@ -2,7 +2,7 @@
 ---
 
 ## 
-**Laksh Patel (Illinois Mathematics and Science Academy) - Student**, **Akhilesh Raj (Vanderbilt University) - Engineering Research Fellow**
+**Laksh Patel (Illinois Mathematics and Science Academy)**, **Akhilesh Raj (Vanderbilt University)**
 ## Overview
 
 Second Order State Hallucinations (SOSH) is a novel methodolgy for mitigating attacks in formation control of multi-agent systems. Traditional mulit-agent systems, upon error, experience cascading faults throughout the system. SOSH, utilizing residual analysis, allows each agent to detect faults in the system within a threshold. Then, the network topology is updated to exclude the attacked node(s). Now, as the system lacks the attacked node(s), SOSH comes into action, approximating the attacked node(s) positions with both velocity and acceleration. The depth of approximation (second order) allows for practical use in search-and-rescue, platooning, traffic control, and  military applications.
