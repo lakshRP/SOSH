@@ -1,7 +1,6 @@
 # Second Order State Hallucinations (SOSH) for Multi-Agent Systems
 ---
 
-## 
 **Laksh Patel (Illinois Mathematics and Science Academy)**, **Akhilesh Raj (Vanderbilt University)**
 ## Overview
 
