@@ -1,7 +1,5 @@
 # Second Order State Hallucinations (SOSH) for Multi-Agent Systems
----
 
-## 
 **Laksh Patel (Illinois Mathematics and Science Academy)**, **Akhilesh Raj (Vanderbilt University)**
 ## Overview
 
@@ -91,5 +89,4 @@ pandas>=1.3.0
 
 Released under the **MIT License**. See [LICENSE](LICENSE) for details.
 
-```
-```
+
