@@ -1,0 +1,32 @@
+# experiments/experiment_config.yaml
+
+# Monte Carlo & Formation Control Experiment Settings
+N: 5               # Number of agents
+horizon: 201       # Time steps (0‥200)
+dt: 0.05           # Discrete time‐step size
+trials: 30         # Number of Monte Carlo trials
+
+# Attack Configuration
+attack:
+  node: 2          # Index of the attacked agent (0-based)
+  vector: [3.0, 3.0]
+  start: 0         # Attack start time step
+  end: 201         # Attack end time step (exclusive)
+
+# Algorithm Parameters
+methods:
+  NoMitigation:
+    type: baseline
+  SOSH:
+    type: sosh
+    gamma: 0.3
+    M: 0.5
+  WMSR:
+    type: wmsr
+    F: 1
+  Huber:
+    type: huber
+    c: 1.0
+
+# Output Directory
+output_dir: results  # Where CSV, NPZ, and figures will be saved
