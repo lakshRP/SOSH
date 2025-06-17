@@ -14,6 +14,16 @@ Second Order State Hallucinations (SOSH) is a novel methodolgy for mitigating at
   Above is an example of SOSH preventing cascading errors on the unaffected nodes (node 1, 3, 4). 
 </div>
 
+## Talks & Awards
+- **NCSSS 2025 Student Research Conference**  
+  Awarded a fully funded trip to present SOSH at the National Consortium of Secondary STEM Schools.
+  - **24th Annual High School Research Symposium**  
+  Presented SOSH and received the People’s Choice Award.
+- **63rd Illinois Junior Science and Humanities Symposium**  
+  Presented SOSH research.
+- **3rd International Mathematics and Statistics Student Research Symposium**  
+  Invited to deliver a talk on SOSH methodology.
+  
 ## 🚀 Getting Started
 
 ### Prerequisites
